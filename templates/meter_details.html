@@ -1,0 +1,75 @@
+nn{% extends 'header.html'%}
+  
+{% block body%}
+{% load static%}
+        <div class="dashboard-wrapper">
+            <div class="container-fluid  dashboard-content">
+                <!-- ============================================================== -->
+                <!-- pageheader -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+               
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <!-- ============================================================== -->
+                    <!-- data table  -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Building Detail</h5>
+                             
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="example" class="table table-striped" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Fuel</th>
+                                                <th>Unit</th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                         {% for i in data%}
+                                            <tr>
+                                                <td>{{i.meterid}}</td>
+                                                <td>{{i.fuel}}</td>
+                                                <td>{{i.unit}}</td>
+                                               
+                                               
+                                            </tr>
+                                            
+                                        {% endfor %}
+                                       
+                                 
+                                         
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end data table  -->
+                    <!-- ============================================================== -->
+                </div>
+              
+               
+               
+            </div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+ <script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+ </script> 
+ {% endblock%}

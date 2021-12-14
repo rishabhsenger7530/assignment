@@ -1,0 +1,57 @@
+{% extends 'header.html'%} {%block body%}
+<div class="dashboard-wrapper">
+    <div class="container-fluid  dashboard-content">
+     
+        <div class="row">
+            
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+             
+                      {% for message in messages%}
+                        <h3 align="center" style="color: red;">{{message}}</h3>
+                    {% endfor %}
+                    <div class="card-body">
+                   
+                       
+                        <hr>
+                        <form class="needs-validation" action="{{url}}" method="post" enctype= multipart/form-data >
+                            {% csrf_token%}
+                            <div class="form-row">
+                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                               
+                                    <label for="validationCustom03">Upload File</label>
+                                    {{form}}
+                                    {% comment %} <input type="file" class="form-control" name="csv_file" id="csv_file"  required> {% endcomment %}
+                                    <div class="invalid-feedback"> Please provide a valid Firm. </div>
+                                    <br>
+                                   
+                                </div>
+                           
+                            </div>
+                        
+                
+                      
+
+
+
+
+                    
+                       <div class="multiple-points-container">
+                          
+
+
+
+                      
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <button class="btn btn-primary" type="submit">Submit form</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+            <!-- ============================================================== -->
+            <!-- end validation form -->
+            <!-- ============================================================== -->
+        </div>
+    </div>
+{%endblock%}
